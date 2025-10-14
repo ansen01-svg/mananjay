@@ -1,4 +1,4 @@
-import HeroCarousel from "@/components/hero-section";
+import HeroCarousel from "@/components/hero-section/hero-section";
 
 export default function Home() {
   return (

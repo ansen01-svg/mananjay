@@ -48,7 +48,7 @@ const Header = () => {
               height={50}
               className="h-8 w-auto"
             />
-            <h1 className="text-white text-2xl font-bold tracking-wide uppercase">
+            <h1 className="text-white text-xl font-bold tracking-wide uppercase">
               Mananjay Daimary
             </h1>
           </Link>
@@ -59,7 +59,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.label}>
                   <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4 py-2 text-white font-semibold text-base hover:bg-white/10 rounded-md transition-colors duration-200 inline-block">
+                    <NavigationMenuLink className="px-4 py-2 text-white font-medium text-sm hover:bg-white/10 rounded-md transition-colors duration-200 inline-block">
                       {item.label}
                     </NavigationMenuLink>
                   </Link>
