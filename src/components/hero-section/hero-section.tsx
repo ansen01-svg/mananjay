@@ -13,40 +13,40 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
+const slides = [
+  {
+    image: img1,
+    title: '"A NATIONALIST TO THE CORE"',
+    subtitle: "",
+  },
+  {
+    image: img2,
+    title: '"A FAMILY MAN"',
+    subtitle: "",
+  },
+  {
+    image: img3,
+    title: '"DEDICATED TO SERVICE"',
+    subtitle: "",
+  },
+  {
+    image: img1,
+    title: '"LEADER OF THE PEOPLE"',
+    subtitle: "",
+  },
+  {
+    image: img2,
+    title: '"GUARDIAN OF DEMOCRACY"',
+    subtitle: "",
+  },
+];
+
 const HeroCarousel = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
   console.log(count);
-
-  const slides = [
-    {
-      image: img1,
-      title: '"A NATIONALIST TO THE CORE"',
-      subtitle: "",
-    },
-    {
-      image: img2,
-      title: '"A FAMILY MAN"',
-      subtitle: "",
-    },
-    {
-      image: img3,
-      title: '"DEDICATED TO SERVICE"',
-      subtitle: "",
-    },
-    {
-      image: img1,
-      title: '"LEADER OF THE PEOPLE"',
-      subtitle: "",
-    },
-    {
-      image: img2,
-      title: '"GUARDIAN OF DEMOCRACY"',
-      subtitle: "",
-    },
-  ];
 
   useEffect(() => {
     if (!api) {
@@ -69,7 +69,7 @@ const HeroCarousel = () => {
   );
 
   return (
-    <section className="relative w-full h-[600px] overflow-hidden">
+    <section className="relative w-full h-[600px] overflow-hidden" id="home">
       <Carousel
         setApi={setApi}
         className="w-full h-full"
@@ -85,7 +85,7 @@ const HeroCarousel = () => {
       >
         <CarouselContent className="h-[600px]">
           {slides.map((slide, index) => (
-            <CarouselItem key={index} className="relative h-[650px]">
+            <CarouselItem key={index} className="relative h-[540px]">
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
                 <Image
