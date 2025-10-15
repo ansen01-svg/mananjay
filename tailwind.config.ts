@@ -53,8 +53,8 @@ const config: Config = {
 
         // Custom colors
         orange: {
-          light: "#FF6600",
-          dark: "#FF671F",
+          default: "#ff7e54",
+          light: "#F2B591",
         },
         green: {
           light: "#128807",
