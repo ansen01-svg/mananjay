@@ -58,7 +58,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-orange-default shadow-md sticky top-0 z-50">
+    <header className="bg-orange-500 shadow-xl shadow-orange-500/20 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2">
           {/* Logo Section */}
@@ -87,7 +87,7 @@ const Header = () => {
                     <a
                       href={item.href}
                       onClick={(e) => handleSmoothScroll(e, item.href)}
-                      className="px-4 py-2 text-white font-semibold text-sm hover:bg-white/10 rounded-md transition-colors duration-200 inline-block cursor-pointer"
+                      className="px-4 py-2 text-white font-semibold text-sm hover:bg-white/20 rounded-md transition-all duration-300 inline-block cursor-pointer"
                     >
                       {item.label}
                     </a>
@@ -111,7 +111,7 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-gradient-to-br from-orange-light to-orange-default border-none w-[85vw] sm:w-[400px] p-0"
+              className="bg-orange-500 border-none w-[85vw] sm:w-[400px] p-0"
             >
               <SheetHeader className="px-8 pt-8 pb-6 border-b border-white/10">
                 <SheetTitle className="text-white text-left text-2xl font-bold tracking-wide">
@@ -124,18 +124,17 @@ const Header = () => {
                     <a
                       href={item.href}
                       onClick={(e) => handleSmoothScroll(e, item.href)}
-                      className="group relative px-6 py-4 text-white font-semibold text-lg hover:bg-white/15 rounded-xl transition-all duration-300 hover:translate-x-2 cursor-pointer"
+                      className="group relative px-6 py-4 text-white font-semibold text-lg hover:bg-white/20 rounded-xl transition-all duration-300 hover:translate-x-2 cursor-pointer"
                     >
                       <span className="relative z-10">{item.label}</span>
-                      <div className="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </a>
                   </SheetClose>
                 ))}
               </nav>
               <div className="absolute bottom-8 left-8 right-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                  <p className="text-white/80 text-sm text-center">
-                    © 2025 Amit Shah
+                <div className="bg-white/20 backdrop-blur-md rounded-xl p-4 border border-white/30 shadow-xl">
+                  <p className="text-white text-sm text-center font-medium drop-shadow-md">
+                    © 2025 Mananjay Daimary
                   </p>
                 </div>
               </div>

@@ -51,14 +51,36 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
 
-        // Custom colors
+        // Custom colors - Premium Orange & Green Theme
         orange: {
+          50: "#fff7ed",
+          100: "#ffedd5",
+          200: "#fed7aa",
+          300: "#fdba74",
+          400: "#fb923c",
+          500: "#ff7e54", // default
+          600: "#ea580c",
+          700: "#c2410c",
+          800: "#9a3412",
+          900: "#7c2d12",
           default: "#ff7e54",
           light: "#F2B591",
+          dark: "#ea580c",
         },
         green: {
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#128807", // light
+          600: "#046A38", // dark
+          700: "#15803d",
+          800: "#166534",
+          900: "#14532d",
           light: "#128807",
           dark: "#046A38",
+          darker: "#023d20",
         },
       },
       borderRadius: {

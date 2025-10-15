@@ -49,8 +49,8 @@ const Footer = () => {
 
   return (
     <>
-      {/* Decorative top border */}
-      <div className="h-1 bg-gradient-to-r from-[#FF8B6A] via-[#FF6B4A] to-[#FF8B6A]"></div>
+      {/* Premium decorative top border */}
+      <div className="h-1 bg-orange-500"></div>
 
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-950 text-white relative overflow-hidden">
         {/* Main Footer Content */}
@@ -59,11 +59,11 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">
+                <h3 className="text-2xl font-bold text-orange-400 mb-2">
                   Mananjay Daimary
                 </h3>
-                <div className="h-1 w-16 bg-[#FF8B6A] rounded-full mb-4"></div>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <div className="h-1 w-16 bg-orange-500 rounded-full mb-4"></div>
+                <p className="text-gray-300 text-sm leading-relaxed">
                   Dedicated to Serving the People of Chirang
                 </p>
               </div>
@@ -82,9 +82,9 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-[#FF8B6A] transition-colors duration-300 text-sm flex items-center group"
+                      className="text-gray-400 hover:text-orange-400 transition-all duration-300 text-sm flex items-center group"
                     >
-                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#FF8B6A] transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-orange-500 transition-all duration-300 mr-0 group-hover:mr-2 rounded-full"></span>
                       {link.name}
                     </a>
                   </li>
@@ -100,7 +100,7 @@ const Footer = () => {
               <div className="space-y-4">
                 {contactInfo.map((item, index) => (
                   <div key={index} className="flex items-start gap-4 group">
-                    <div className="flex-shrink-0 w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-[#FF8B6A] transition-colors duration-300">
+                    <div className="flex-shrink-0 w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300">
                       <item.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
                     </div>
                     <div className="flex-1">
@@ -110,7 +110,7 @@ const Footer = () => {
                       {item.link ? (
                         <a
                           href={item.link}
-                          className="text-gray-400 hover:text-[#FF8B6A] transition-colors duration-300 text-sm"
+                          className="text-gray-400 hover:text-orange-400 transition-colors duration-300 text-sm hover:underline decoration-orange-500"
                         >
                           {item.content}
                         </a>
@@ -136,7 +136,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-[#FF8B6A] hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-[#FF8B6A]/20"
+                  className="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-orange-500/40"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -154,8 +154,8 @@ const Footer = () => {
         </div>
 
         {/* Decorative Elements */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-[#FF8B6A] opacity-5 rounded-full blur-3xl -translate-x-32 -translate-y-32"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#FF8B6A] opacity-5 rounded-full blur-3xl translate-x-32 translate-y-32"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -translate-x-32 -translate-y-32"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl translate-x-32 translate-y-32"></div>
       </footer>
     </>
   );

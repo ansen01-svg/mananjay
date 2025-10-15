@@ -1,5 +1,11 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import React, { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface CardData {
   id: string;
@@ -64,11 +70,14 @@ const ImpactSection = () => {
   };
 
   return (
-    <div className="py-16 px-4 md:px-8 lg:px-16 bg-white" id="impact">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-orange-50 via-white to-green-50 relative overflow-hidden" id="impact">
+      {/* Premium decorative elements */}
+      <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-orange-200/30 to-orange-400/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-green-200/30 to-green-400/20 rounded-full blur-3xl" />
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="mb-16">
-          <button className="bg-orange-default text-white px-8 py-3 rounded-full text-base md:text-lg font-bold uppercase tracking-wider hover:bg-orange-light transition-colors">
+          <button className="bg-orange-500 text-white px-8 py-3 rounded-full text-base md:text-lg font-bold uppercase tracking-wider hover:bg-orange-600 transition-all duration-300 shadow-lg">
             IMPACT
           </button>
         </div>
@@ -90,9 +99,9 @@ const ImpactSection = () => {
           {/* Center Column - Circle */}
           <div className="flex items-center justify-center lg:py-8">
             <div className="relative w-full max-w-md aspect-square">
-              <div className="absolute inset-0 rounded-full border-[1px] border-orange-default flex items-center justify-center p-12">
+              <div className="absolute inset-0 rounded-full border-4 border-orange-400 flex items-center justify-center shadow-2xl bg-white p-12">
                 <div className="text-center">
-                  <h2 className="text-5xl font-medium text-orange-default mb-4">
+                  <h2 className="text-5xl font-medium text-orange-600 mb-4">
                     5 Years in Public Service
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed">
@@ -117,47 +126,38 @@ const ImpactSection = () => {
         </div>
 
         {/* Expanded Content Modal */}
-        {expandedCard && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto p-8 relative animate-in fade-in zoom-in duration-300">
-              <button
-                onClick={() => setExpandedCard(null)}
-                className="absolute top-4 right-4 w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors"
-              >
-                ×
-              </button>
+        <Dialog open={!!expandedCard} onOpenChange={() => setExpandedCard(null)}>
+          <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-white via-orange-50/30 to-green-50/30 border-2 border-orange-200/50">
+            {cardsData.map((card) => {
+              if (card.id === expandedCard) {
+                return (
+                  <div key={card.id}>
+                    <DialogHeader className="mb-6">
+                      <DialogTitle className="text-4xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-green-600 bg-clip-text text-transparent mb-2">
+                        {card.title}
+                      </DialogTitle>
+                      <p className="text-xl text-green-700 font-semibold">
+                        {card.subtitle}
+                      </p>
+                      <p className="text-gray-600 mt-2">{card.description}</p>
+                    </DialogHeader>
 
-              {cardsData.map((card) => {
-                if (card.id === expandedCard) {
-                  return (
-                    <div
-                      key={card.id}
-                      className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                    >
-                      <div className="md:col-span-3 mb-6">
-                        <h2 className="text-4xl font-bold text-gray-800 mb-2">
-                          {card.title}
-                        </h2>
-                        <p className="text-xl text-[#FF8B6A] font-semibold">
-                          {card.subtitle}
-                        </p>
-                        <p className="text-gray-600 mt-2">{card.description}</p>
-                      </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                       {card.details.map((detail, index) => (
-                        <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                        <div key={index} className="bg-gradient-to-br from-orange-50 to-green-50 p-6 rounded-lg shadow-md border border-orange-200/50">
                           <p className="text-gray-700 leading-relaxed text-justify">
                             {detail}
                           </p>
                         </div>
                       ))}
                     </div>
-                  );
-                }
-                return null;
-              })}
-            </div>
-          </div>
-        )}
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
@@ -176,17 +176,17 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
 }) => {
   return (
     <div
-      className={`border-[1px] border-orange-default rounded-3xl p-4 transition-all duration-500 cursor-pointer transform hover:scale-105 hover:shadow-xl ${
+      className={`border-[2px] rounded-3xl p-4 transition-all duration-500 cursor-pointer transform hover:scale-105 ${
         isExpanded
-          ? "bg-[#FF8B6A] border-[#FF8B6A] text-white"
-          : "bg-white border-gray-200 hover:border-[#FF8B6A]"
+          ? "bg-orange-500 border-orange-500 text-white shadow-2xl shadow-orange-500/40"
+          : "bg-white/80 backdrop-blur-sm border-orange-300 hover:border-orange-500 hover:shadow-xl shadow-lg"
       }`}
       onClick={onToggle}
     >
       <div className="text-center">
         <h3
           className={`text-xl font-medium mb-3 ${
-            isExpanded ? "text-white" : "text-[#FF8B6A]"
+            isExpanded ? "text-white drop-shadow-lg" : "text-orange-600"
           }`}
         >
           {card.title}
@@ -210,8 +210,8 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
           <button
             className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
               isExpanded
-                ? "bg-white text-[#FF8B6A]"
-                : "bg-gray-100 text-[#FF8B6A] hover:bg-[#FF8B6A] hover:text-white"
+                ? "bg-white text-orange-600 shadow-lg"
+                : "bg-orange-100 text-orange-700 hover:bg-orange-500 hover:text-white shadow-md"
             }`}
           >
             {isExpanded ? (
