@@ -84,7 +84,10 @@ const ImageGallerySection = () => {
   };
 
   return (
-    <section className="py-12 px-4 md:px-8 lg:px-12 bg-gray-100 relative">
+    <section
+      className="py-16 px-4 md:px-8 lg:px-16 bg-gray-100 relative"
+      id="gallery"
+    >
       <style jsx>{`
         div::-webkit-scrollbar {
           display: none;
@@ -209,7 +212,7 @@ const ImageGallerySection = () => {
             {/* Thumbnails Container */}
             <div
               ref={mobileThumbnailRef}
-              className="flex gap-3 overflow-x-scroll scroll-smooth flex-1"
+              className="flex gap-3 p-2 overflow-x-scroll scroll-smooth flex-1"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {galleryImages.map((image, index) => (
@@ -219,7 +222,7 @@ const ImageGallerySection = () => {
                   className={cn(
                     "relative flex-shrink-0 w-24 h-20 rounded-xl overflow-hidden transition-all duration-300",
                     selectedImage === index
-                      ? "ring-4 ring-orange-default shadow-xl"
+                      ? "ring-2 ring-orange-default shadow-xl"
                       : ""
                   )}
                 >

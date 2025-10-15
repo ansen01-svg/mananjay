@@ -58,7 +58,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#FF7F5C] shadow-md sticky top-0 z-50">
+    <header className="bg-orange-default shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-2">
           {/* Logo Section */}
@@ -87,7 +87,7 @@ const Header = () => {
                     <a
                       href={item.href}
                       onClick={(e) => handleSmoothScroll(e, item.href)}
-                      className="px-4 py-2 text-white font-semibold text-base hover:bg-white/10 rounded-md transition-colors duration-200 inline-block cursor-pointer"
+                      className="px-4 py-2 text-white font-semibold text-sm hover:bg-white/10 rounded-md transition-colors duration-200 inline-block cursor-pointer"
                     >
                       {item.label}
                     </a>
