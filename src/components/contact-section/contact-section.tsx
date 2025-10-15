@@ -35,7 +35,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-50 flex items-center justify-center py-16 px-4">
+    <div
+      className="py-16 px-4 md:px-8 lg:px-16 bg-gray-100 flex items-center justify-center"
+      id="contact"
+    >
       <div className="max-w-2xl w-full">
         {/* Contact Information Cards */}
         <div className="space-y-6 mb-12">
@@ -72,13 +75,6 @@ const ContactSection = () => {
               <social.icon className="w-6 h-6" />
             </a>
           ))}
-        </div>
-
-        {/* Footer Text */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 text-sm">
-            Dedicated to Serving the People of Chirang
-          </p>
         </div>
       </div>
     </div>
