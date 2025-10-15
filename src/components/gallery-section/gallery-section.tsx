@@ -85,18 +85,21 @@ const ImageGallerySection = () => {
 
   return (
     <section
-      className="py-16 px-4 md:px-8 lg:px-16 bg-gray-100 relative"
+      className="py-16 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-green-50 via-gray-50 to-orange-50 relative overflow-hidden"
       id="gallery"
     >
+      {/* Premium decorative elements */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-br from-orange-300/20 to-orange-500/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-green-300/20 to-green-500/20 rounded-full blur-3xl" />
       <style jsx>{`
         div::-webkit-scrollbar {
           display: none;
         }
       `}</style>
-      <div className="w-full mx-auto">
+      <div className="w-full mx-auto relative z-10">
         {/* Header with More Link */}
         <div className="flex items-center justify-between mb-8">
-          <div className="inline-block bg-orange-default text-white px-8 py-3 rounded-full shadow-md">
+          <div className="inline-block bg-orange-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300">
             <h2 className="text-base md:text-lg font-bold uppercase tracking-wider">
               IMAGE GALLERY
             </h2>
@@ -107,7 +110,7 @@ const ImageGallerySection = () => {
         <div className="hidden lg:flex gap-6">
           {/* Main Image Display */}
           <div className="flex-1">
-            <div className="relative w-full h-[420px] aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[420px] aspect-video rounded-3xl overflow-hidden shadow-2xl ring-2 ring-orange-300/50 hover:ring-orange-400/70 transition-all duration-300">
               <Image
                 src={galleryImages[selectedImage].src}
                 alt={galleryImages[selectedImage].alt}
@@ -131,10 +134,10 @@ const ImageGallerySection = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollThumbnails("up", false)}
-              className="hover:bg-gray-300 rounded-full w-10 h-10"
+              className="hover:bg-orange-100 rounded-full w-10 h-10 transition-all duration-300"
               aria-label="Scroll up"
             >
-              <ChevronUp className="w-6 h-6 text-gray-700" />
+              <ChevronUp className="w-6 h-6 text-orange-600" />
             </Button>
 
             {/* Thumbnails Container */}
@@ -150,8 +153,8 @@ const ImageGallerySection = () => {
                   className={cn(
                     "relative flex-shrink-0 w-28 h-24 rounded-2xl overflow-hidden transition-all duration-300",
                     selectedImage === index
-                      ? "ring-2 ring-orange-default shadow-xl"
-                      : ""
+                      ? "ring-4 ring-orange-500 shadow-xl shadow-orange-500/50 scale-105"
+                      : "ring-2 ring-gray-200 hover:ring-orange-300"
                   )}
                 >
                   <Image
@@ -169,10 +172,10 @@ const ImageGallerySection = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollThumbnails("down", false)}
-              className="hover:bg-gray-300 rounded-full w-10 h-10"
+              className="hover:bg-orange-100 rounded-full w-10 h-10 transition-all duration-300"
               aria-label="Scroll down"
             >
-              <ChevronDown className="w-6 h-6 text-gray-700" />
+              <ChevronDown className="w-6 h-6 text-orange-600" />
             </Button>
           </div>
         </div>
@@ -180,7 +183,7 @@ const ImageGallerySection = () => {
         {/* Gallery Layout - Mobile */}
         <div className="lg:hidden space-y-6">
           {/* Main Image Display */}
-          <div className="relative w-full max-w-2xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative w-full max-w-2xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl ring-2 ring-orange-300/50">
             <Image
               src={galleryImages[selectedImage].src}
               alt={galleryImages[selectedImage].alt}
@@ -203,10 +206,10 @@ const ImageGallerySection = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollThumbnails("left", true)}
-              className="hover:bg-gray-300 rounded-full w-10 h-10 flex-shrink-0"
+              className="hover:bg-orange-100 rounded-full w-10 h-10 flex-shrink-0 transition-all duration-300"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-700" />
+              <ChevronLeft className="w-6 h-6 text-orange-600" />
             </Button>
 
             {/* Thumbnails Container */}
@@ -222,8 +225,8 @@ const ImageGallerySection = () => {
                   className={cn(
                     "relative flex-shrink-0 w-24 h-20 rounded-xl overflow-hidden transition-all duration-300",
                     selectedImage === index
-                      ? "ring-2 ring-orange-default shadow-xl"
-                      : ""
+                      ? "ring-4 ring-orange-500 shadow-xl shadow-orange-500/50 scale-105"
+                      : "ring-2 ring-gray-200 hover:ring-orange-300"
                   )}
                 >
                   <Image
@@ -241,10 +244,10 @@ const ImageGallerySection = () => {
               variant="ghost"
               size="icon"
               onClick={() => scrollThumbnails("right", true)}
-              className="hover:bg-gray-300 rounded-full w-10 h-10 flex-shrink-0"
+              className="hover:bg-orange-100 rounded-full w-10 h-10 flex-shrink-0 transition-all duration-300"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-6 h-6 text-gray-700" />
+              <ChevronRight className="w-6 h-6 text-orange-600" />
             </Button>
           </div>
         </div>

@@ -88,7 +88,7 @@ const HeroCarousel = () => {
                   sizes="100vw"
                 />
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/50" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/60" />
               </div>
 
               {/* Content */}
@@ -100,11 +100,11 @@ const HeroCarousel = () => {
                       : "opacity-0 translate-y-8 scale-95"
                   }`}
                 >
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-default leading-tight tracking-tight">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-orange-400 leading-tight tracking-tight drop-shadow-2xl">
                     {slide.title}
                   </h1>
                   {slide.subtitle && (
-                    <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white font-medium">
+                    <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white font-medium drop-shadow-lg">
                       {slide.subtitle}
                     </p>
                   )}
@@ -123,8 +123,8 @@ const HeroCarousel = () => {
             onClick={() => scrollTo(index)}
             className={`transition-all duration-300 rounded-full ${
               current === index
-                ? "w-3 h-3 bg-[#FF7F5C]"
-                : "w-2.5 h-2.5 bg-gray-200 hover:bg-gray-300"
+                ? "w-3 h-3 bg-orange-500 shadow-lg shadow-orange-500/50"
+                : "w-2.5 h-2.5 bg-white/60 hover:bg-white/90"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
