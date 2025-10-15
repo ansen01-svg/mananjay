@@ -1,6 +1,6 @@
 "use client";
 
-import logo from "@/assets/images/BPF-sec-logo-main.png";
+import logo from "@/assets/images/BPF-logo.png";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -19,23 +19,48 @@ import {
 import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Impact", href: "#impact" },
-  { label: "Contact", href: "#contact" },
-];
+import React, { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navItems = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Impact", href: "#impact" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const headerOffset = 80; // Height of sticky header
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      // Close mobile menu if open
+      setIsOpen(false);
+    }
+  };
+
   return (
-    <header className="bg-orange-light shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+    <header className="bg-[#FF7F5C] shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-2">
           {/* Logo Section */}
           <Link
             href="/"
@@ -44,11 +69,11 @@ const Header = () => {
             <Image
               src={logo}
               alt="Logo"
-              width={50}
-              height={50}
-              className="h-8 w-auto"
+              width={80}
+              height={80}
+              className="h-16 w-auto"
             />
-            <h1 className="text-white text-xl font-bold tracking-wide uppercase">
+            <h1 className="text-white text-2xl font-bold tracking-wide uppercase">
               Mananjay Daimary
             </h1>
           </Link>
@@ -58,11 +83,15 @@ const Header = () => {
             <NavigationMenuList className="space-x-2">
               {navItems.map((item) => (
                 <NavigationMenuItem key={item.label}>
-                  <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink className="px-4 py-2 text-white font-medium text-sm hover:bg-white/10 rounded-md transition-colors duration-200 inline-block">
+                  <NavigationMenuLink asChild>
+                    <a
+                      href={item.href}
+                      onClick={(e) => handleSmoothScroll(e, item.href)}
+                      className="px-4 py-2 text-white font-semibold text-base hover:bg-white/10 rounded-md transition-colors duration-200 inline-block cursor-pointer"
+                    >
                       {item.label}
-                    </NavigationMenuLink>
-                  </Link>
+                    </a>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -82,7 +111,7 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="bg-gradient-to-br from-orange-light to-orange-dark border-none w-[85vw] sm:w-[400px] p-0"
+              className="bg-gradient-to-br from-orange-light to-orange-default border-none w-[85vw] sm:w-[400px] p-0"
             >
               <SheetHeader className="px-8 pt-8 pb-6 border-b border-white/10">
                 <SheetTitle className="text-white text-left text-2xl font-bold tracking-wide">
@@ -92,20 +121,21 @@ const Header = () => {
               <nav className="flex flex-col px-6 py-8 space-y-1">
                 {navItems.map((item) => (
                   <SheetClose asChild key={item.label}>
-                    <Link
+                    <a
                       href={item.href}
-                      className="group relative px-6 py-4 text-white font-semibold text-lg hover:bg-white/15 rounded-xl transition-all duration-300 hover:translate-x-2"
+                      onClick={(e) => handleSmoothScroll(e, item.href)}
+                      className="group relative px-6 py-4 text-white font-semibold text-lg hover:bg-white/15 rounded-xl transition-all duration-300 hover:translate-x-2 cursor-pointer"
                     >
                       <span className="relative z-10">{item.label}</span>
                       <div className="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </Link>
+                    </a>
                   </SheetClose>
                 ))}
               </nav>
               <div className="absolute bottom-8 left-8 right-8">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                   <p className="text-white/80 text-sm text-center">
-                    © 2025 Mananjay Daimary
+                    © 2025 Amit Shah
                   </p>
                 </div>
               </div>
