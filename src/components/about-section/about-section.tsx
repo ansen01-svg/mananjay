@@ -1,7 +1,6 @@
 "use client";
 
 import profileImg from "@/assets/images/cr-1.jpg";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 
 const AboutSection = () => {
@@ -52,46 +51,6 @@ const AboutSection = () => {
                   priority
                 />
               </div>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className="flex items-center gap-6 pt-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF7F5C] hover:text-[#FF6B47] transition-colors duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF7F5C] hover:text-[#FF6B47] transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF7F5C] hover:text-[#FF6B47] transition-colors duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#FF7F5C] hover:text-[#FF6B47] transition-colors duration-300"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-6 h-6" />
-              </a>
             </div>
           </div>
         </div>

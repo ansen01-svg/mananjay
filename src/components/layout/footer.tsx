@@ -1,0 +1,164 @@
+"use client";
+
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from "lucide-react";
+
+const Footer = () => {
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Location",
+      content: "Chirang District, Assam, India",
+      link: null,
+    },
+    {
+      icon: Phone,
+      title: "Phone",
+      content: "+91 94351 39432",
+      link: "tel:+919435139432",
+    },
+    {
+      icon: Mail,
+      title: "Email",
+      content: "mananjay.daimary@mananjay.com",
+      link: "mailto:mananjay.daimary@mananjay.com",
+    },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, label: "Facebook", href: "#facebook" },
+    { icon: Twitter, label: "Twitter/X", href: "#twitter" },
+    { icon: Instagram, label: "Instagram", href: "#instagram" },
+    { icon: Linkedin, label: "LinkedIn", href: "#linkedin" },
+  ];
+
+  const quickLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Gallery", href: "#gallery" },
+    { name: "Impact", href: "#impact" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  return (
+    <>
+      {/* Decorative top border */}
+      <div className="h-1 bg-gradient-to-r from-[#FF8B6A] via-[#FF6B4A] to-[#FF8B6A]"></div>
+
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-950 text-white relative overflow-hidden">
+        {/* Main Footer Content */}
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Brand Section */}
+            <div className="lg:col-span-1">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Mananjay Daimary
+                </h3>
+                <div className="h-1 w-16 bg-[#FF8B6A] rounded-full mb-4"></div>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Dedicated to Serving the People of Chirang
+                </p>
+              </div>
+              <p className="text-gray-500 text-xs">
+                Political Leader & Community Development Advocate
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="lg:col-span-1">
+              <h4 className="text-lg font-semibold mb-6 text-white">
+                Quick Links
+              </h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-[#FF8B6A] transition-colors duration-300 text-sm flex items-center group"
+                    >
+                      <span className="w-0 group-hover:w-2 h-0.5 bg-[#FF8B6A] transition-all duration-300 mr-0 group-hover:mr-2"></span>
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="lg:col-span-2">
+              <h4 className="text-lg font-semibold mb-6 text-white">
+                Get in Touch
+              </h4>
+              <div className="space-y-4">
+                {contactInfo.map((item, index) => (
+                  <div key={index} className="flex items-start gap-4 group">
+                    <div className="flex-shrink-0 w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-[#FF8B6A] transition-colors duration-300">
+                      <item.icon className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <div className="flex-1">
+                      <h5 className="text-sm font-semibold text-gray-300 mb-1">
+                        {item.title}
+                      </h5>
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          className="text-gray-400 hover:text-[#FF8B6A] transition-colors duration-300 text-sm"
+                        >
+                          {item.content}
+                        </a>
+                      ) : (
+                        <p className="text-gray-400 text-sm">{item.content}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="my-12 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            {/* Social Links */}
+            <div className="flex gap-4">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-[#FF8B6A] hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-[#FF8B6A]/20"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
+
+            {/* Copyright */}
+            <div className="text-center md:text-left">
+              <p className="text-gray-500 text-sm">
+                © {new Date().getFullYear()} Mananjay Daimary. All Rights
+                Reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-[#FF8B6A] opacity-5 rounded-full blur-3xl -translate-x-32 -translate-y-32"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#FF8B6A] opacity-5 rounded-full blur-3xl translate-x-32 translate-y-32"></div>
+      </footer>
+    </>
+  );
+};
+
+export default Footer;
