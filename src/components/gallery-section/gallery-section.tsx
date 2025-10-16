@@ -107,9 +107,9 @@ const ImageGallerySection = () => {
         </div>
 
         {/* Gallery Layout - Desktop */}
-        <div className="hidden lg:flex gap-6">
+        <div className="hidden lg:flex gap-6 max-w-5xl mx-auto">
           {/* Main Image Display */}
-          <div className="flex-1">
+          <div className="flex-1 max-w-3xl">
             <div className="relative w-full h-[420px] aspect-video rounded-3xl overflow-hidden shadow-2xl ring-2 ring-orange-300/50 hover:ring-orange-400/70 transition-all duration-300">
               <Image
                 src={galleryImages[selectedImage].src}
