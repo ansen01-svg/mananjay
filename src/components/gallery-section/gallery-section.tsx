@@ -96,7 +96,7 @@ const ImageGallerySection = () => {
           display: none;
         }
       `}</style>
-      <div className="w-full mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header with More Link */}
         <div className="flex items-center justify-between mb-8">
           <div className="inline-block bg-orange-500 text-white px-8 py-3 rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300">
