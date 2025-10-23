@@ -10,49 +10,49 @@ import {
   Twitter,
 } from "lucide-react";
 
+const contactInfo = [
+  {
+    icon: MapPin,
+    title: "Location",
+    content: "Chirang District, Assam, India",
+    link: null,
+  },
+  {
+    icon: Phone,
+    title: "Phone",
+    content: "+91 94351 39432",
+    link: "tel:+919435139432",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    content: "mananjay.daimary@mananjay.com",
+    link: "mailto:mananjay.daimary@mananjay.com",
+  },
+];
+
+const socialLinks = [
+  { icon: Facebook, label: "Facebook", href: "#facebook" },
+  { icon: Twitter, label: "Twitter/X", href: "#twitter" },
+  { icon: Instagram, label: "Instagram", href: "#instagram" },
+  { icon: Linkedin, label: "LinkedIn", href: "#linkedin" },
+];
+
+const quickLinks = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Gallery", href: "#gallery" },
+  { name: "Impact", href: "#impact" },
+  { name: "Contact", href: "#contact" },
+];
+
 const Footer = () => {
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Location",
-      content: "Chirang District, Assam, India",
-      link: null,
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      content: "+91 94351 39432",
-      link: "tel:+919435139432",
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      content: "mananjay.daimary@mananjay.com",
-      link: "mailto:mananjay.daimary@mananjay.com",
-    },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, label: "Facebook", href: "#facebook" },
-    { icon: Twitter, label: "Twitter/X", href: "#twitter" },
-    { icon: Instagram, label: "Instagram", href: "#instagram" },
-    { icon: Linkedin, label: "LinkedIn", href: "#linkedin" },
-  ];
-
-  const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Impact", href: "#impact" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
-    <>
+    <div className="bg-gradient-to-b from-gray-900 to-gray-950 text-white">
       {/* Premium decorative top border */}
       <div className="h-1 bg-orange-500"></div>
 
-      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-950 text-white relative overflow-hidden">
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -157,7 +157,7 @@ const Footer = () => {
         <div className="absolute top-0 left-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -translate-x-32 -translate-y-32"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl translate-x-32 translate-y-32"></div>
       </footer>
-    </>
+    </div>
   );
 };
 
