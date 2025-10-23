@@ -3,11 +3,11 @@
 import {
   Facebook,
   Instagram,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
   Twitter,
+  Youtube,
 } from "lucide-react";
 
 const contactInfo = [
@@ -31,11 +31,19 @@ const contactInfo = [
   },
 ];
 
-const socialLinks = [
+export const socialLinks = [
   { icon: Facebook, label: "Facebook", href: "#facebook" },
-  { icon: Twitter, label: "Twitter/X", href: "#twitter" },
-  { icon: Instagram, label: "Instagram", href: "#instagram" },
-  { icon: Linkedin, label: "LinkedIn", href: "#linkedin" },
+  { icon: Twitter, label: "Twitter/X", href: "https://x.com/MananjayDa2415" },
+  {
+    icon: Instagram,
+    label: "Instagram",
+    href: "https://www.instagram.com/mananright1/",
+  },
+  {
+    icon: Youtube,
+    label: "LinkedIn",
+    href: "https://www.youtube.com/@MananjayDaimary",
+  },
 ];
 
 const quickLinks = [
@@ -136,6 +144,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
                   className="w-11 h-11 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-orange-500/40"
                 >
                   <social.icon className="w-5 h-5" />

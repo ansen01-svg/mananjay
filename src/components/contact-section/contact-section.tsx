@@ -1,12 +1,5 @@
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Twitter,
-} from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { socialLinks } from "../layout/footer";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -25,13 +18,6 @@ const ContactSection = () => {
       text: "mananjay.daimary@mananjay.com",
       type: "email",
     },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, label: "Facebook", href: "#" },
-    { icon: Twitter, label: "Twitter", href: "#" },
-    { icon: Instagram, label: "Instagram", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
   ];
 
   return (
@@ -73,6 +59,7 @@ const ContactSection = () => {
               key={index}
               href={social.href}
               aria-label={social.label}
+              target="_blank"
               className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white hover:bg-orange-600 transition-all duration-300 transform hover:scale-110 shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50"
             >
               <social.icon className="w-6 h-6" />
