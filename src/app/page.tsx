@@ -5,6 +5,8 @@ import ContactSection from "@/components/contact-section/contact-section";
 import GallerySection from "@/components/gallery-section/gallery-section";
 import HeroCarousel from "@/components/hero-section/hero-section";
 import ImpactSection from "@/components/impact-section/impact-section";
+import JourneySection from "@/components/journey-section/journey-section";
+import VisionSection from "@/components/my-view-section/my-view-section";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
 
@@ -20,8 +22,10 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroCarousel />
       <AboutSection />
+      <JourneySection />
       <GallerySection />
       <ImpactSection />
+      <VisionSection />
       <ContactSection />
 
       {/* Scroll to Top Button */}
